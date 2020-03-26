@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './App.scss';
+import Mobile from './Components/Mobile.jsx';
+import Desktop from './Components/Desktop.jsx';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const mobile = window.innerWidth <= 500;
+  if (true) {
+    return (
+      <div className="App">
+        <Mobile />
+      </div>
+    );
+  } else {
+    return (
+      <div className="App">
+        <Desktop />
+      </div>
+    );
+  }
 }
 
 export default App;

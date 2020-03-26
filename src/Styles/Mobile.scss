@@ -1,0 +1,59 @@
+$color-a: #26a96c;
+$color-b: #1ba332;
+$color-c: #036016;
+$color-d: #fbf5f3;
+$color-e: #373e40;
+
+.mobile-app {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $color-a;
+    height: 100vh;
+
+    .header {
+        border: $color-d solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .header-subgroup {
+            display: inline-block;
+            img {
+                float: left;
+                margin: 10px;
+                padding: 1px;
+                height: 69px;
+                width: auto;
+                vertical-align: middle;
+            }
+            .header-text {
+                float: left;
+                margin: 10px;
+                text-align: center;
+                color: $color-d;
+            }
+        }
+    }
+
+    .server-status {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+    .online-status {
+        display: inline-block;
+        width: 80vw;
+        background-color: $color-e;
+        padding: 10px;
+        text-align: center;
+        color: $color-d;
+    }
+
+    .player-list {
+        font-size: 16pt;
+        text-align: center;
+        color: $color-e;
+        list-style-type: none;
+    }
+}
