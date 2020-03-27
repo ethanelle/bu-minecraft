@@ -30,12 +30,20 @@ class Mobile extends React.Component {
             .then(res =>res.json())
             .then(
                 (result) => {
-                    this.setState({
-                        online: result.online,
-                        players: result.players.online,
-                        maxPlayers: result.players.max,
-                        users: result.players.list
-                    });
+                    if (result.players.online > 0) {
+                        this.setState({
+                            online: result.online,
+                            players: result.players.online,
+                            maxPlayers: result.players.max,
+                            users: result.players.list
+                        });
+                    } else {
+                        this.setState({
+                            online: result.online,
+                            players: result.players.online,
+                            maxPlayers: result.players.max,
+                        });
+                    }
                 }, (error) => {
                     console.error("Error loading API");
                 }
