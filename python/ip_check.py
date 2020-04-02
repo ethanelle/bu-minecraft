@@ -11,13 +11,13 @@ matches = []
 
 for file in os.listdir(path):
     if file.endswith('.yml'):
-        f = open(file, "r")
+        f = open(path + str(file), "r")
         contents = f.read()
         f.close()
         match = re.search(regex_ip, contents)
         if match:
             ip = match.group(0).split(' ')[1]
-            match = re.search(regex_name, content)
+            match = re.search(regex_name, contents)
             if match:
                 name = match.group(0).split(' ')[1]
                 pair = (name, ip)
@@ -30,7 +30,7 @@ while len(matches) > 0:
     names = []
     ip = ""
     for a,b in matches:
-        if len(names) == 0
+        if len(names) == 0:
             names.append(a)
             ip = b
             matches.remove((a,b))
