@@ -41,4 +41,5 @@ while len(matches) > 0:
         duplicates.append((ip, names))
 
 print("Duplicates: ")
-print(duplicates)
+for dupe in duplicates:
+    print(dupe)
