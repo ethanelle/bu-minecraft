@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Styles/Mobile.scss';
 import mc_icon from '../Images/mc-icon.png';
+import Chart from './Chart.jsx';
 
 class Mobile extends React.Component {
     constructor (props) {
@@ -11,9 +12,11 @@ class Mobile extends React.Component {
             players: 0,
             maxPlayers: 0,
             users: [],
+            showReport: false
         };
 
         this.getUsers = this.getUsers.bind(this);
+        this.toggleReportView = this.toggleReportView.bind(this);
     }
 
     componentDidMount() {
@@ -49,6 +52,11 @@ class Mobile extends React.Component {
                 }
             );
     }
+
+    toggleReportView() {
+        let newState = !this.state.showReport;
+        this.setState({showReport: newState});
+    }
     
     render() {
         const playersTable = this.state.users.map((name, i) =>
@@ -72,6 +80,14 @@ class Mobile extends React.Component {
                 <ul className="player-list">
                     {playersTable}
                 </ul>
+                <div className="usage-report">
+                    <div className="usage-toggle" onClick={this.toggleReportView}>
+                        <label>Show/Hide April cost report</label>
+                    </div>
+                    <div className="usage-image">
+                        { this.state.showReport ? <Chart /> : null }
+                    </div>
+                </div>
             </div>
         );
     }

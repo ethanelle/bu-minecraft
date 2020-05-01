@@ -56,4 +56,25 @@ $color-e: #373e40;
         color: $color-e;
         list-style-type: none;
     }
+
+    .usage-report {
+        margin-top: 50px;
+        display: flexbox;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .usage-toggle {
+            display: inline-block;
+            color: $color-d;
+            font-weight: bold;
+            border: 1px solid $color-d;
+            padding: 5px;
+            margin: 10px;
+        }
+        .usage-image {
+            img {
+                max-width: 85vw;
+            }
+        }
+    }
 }
